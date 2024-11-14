@@ -100,6 +100,13 @@ def updateGrid(grid) -> list:
 
     return newGrid
 
+def reset(grid) -> list:
+    for xi, x in enumerate(grid):
+        for yi, y in enumerate(grid[xi]):
+            grid[xi][yi] = 0
+    
+    return initGrid(grid)
+
 def run():
     clock = pygame.time.Clock()
 
@@ -123,6 +130,9 @@ def run():
         for e in pygame.event.get():
             if (e.type == pygame.QUIT):
                 running = False
+            
+            if (e.type == pygame.KEYDOWN):
+                pixels = reset(pixels)
                 
         clock.tick(fps)
 
