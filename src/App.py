@@ -107,6 +107,7 @@ def run():
 
     size = x,y = 700, 700
     screen = pygame.display.set_mode(size)
+    pygame.display.set_caption("game of life")
 
     pixelSize = 5
     pixels = [[0 for _ in range(x // pixelSize)] for _ in range(y // pixelSize)]
